@@ -2,169 +2,177 @@
 
 ![About Openmeetings Logo](/openmeetings-server/src/site/resources/images/logo.png)
 
-[Apache OpenMeetings](https://openmeetings.apache.org) provides:
- - [x] **video conferencing**
- - [x] **instant messaging**
- - [x] **white board**
- - [x] **collaborative document editing**
- - [x] **other groupware tools**
+[Apache OpenMeetings](https://openmeetings.apache.org) 提供以下功能：
+ - [x] **视频会议**（视频会议）
+ - [x] **instant messaging**（即时消息）
+ - [x] **white board**（白板协作）
+ - [x] **collaborative document editing**（协作文档编辑）
+ - [x] **other groupware tools**（其他群件工具）
 
-It uses API functions of Media Server for Remoting and Streaming [Kurento](https://www.kurento.org)).
+该项目使用用于远程控制和流媒体的媒体服务器API功能 [Kurento](https://www.kurento.org)。
 
-### Getting Started
-For the latest information, please visit the project website:
-  - [OpenMeetings Website](https://openmeetings.apache.org/)
+> **中文备注**：Apache OpenMeetings 是一个开源的视频会议和协作平台，提供了完整的在线会议解决方案，支持多人实时视频、音频、聊天和协作编辑等功能。
 
-Documentation for installation and upgrade can be found at:
-  - [Installation Guide](https://openmeetings.apache.org/installation.html)
-  - [Upgrade Instructions](https://openmeetings.apache.org/Upgrade.html)
+### 入门指南
+获取最新信息，请访问项目网站：
+  - [OpenMeetings 官方网站](https://openmeetings.apache.org/)
 
-All available mailing lists are listed here:
-  - [Mailing Lists](https://openmeetings.apache.org/mailing-lists.html)
+安装和升级文档可在此处找到：
+  - [安装指南](https://openmeetings.apache.org/installation.html)
+  - [升级说明](https://openmeetings.apache.org/Upgrade.html)
 
-### Prerequisites
-Apache OpenMeeting requires the following software to build:
-- [Apache Maven 3.8.7 or later](https://maven.apache.org/)
+所有可用的邮件列表在此列出：
+  - [邮件列表](https://openmeetings.apache.org/mailing-lists.html)
 
-Apache OpenMeetings requires the following software to run:
+> **中文备注**：官方网站提供了详细的使用指南和API文档，新用户可以通过安装指南快速搭建环境。
+
+### 系统要求
+构建 Apache OpenMeeting 需要以下软件：
+- [Apache Maven 3.8.7 或更高版本](https://maven.apache.org/)
+
+运行 Apache OpenMeetings 需要以下软件：
 - [Java SE 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
-### Building and running
-To build and run the project from source:
-1. Ensure the prerequisites are installed.
-2. Build the project using Maven in the root directory:
+> **中文备注**：从版本8.0.0开始，项目需要Java 17环境运行，早期版本（如5.0.0及以上）需要Java 11，更早版本则支持Java 8。
+
+### 构建和运行
+从源代码构建和运行项目：
+1. 确保安装了所需的软件。
+2. 在根目录中使用Maven构建项目：
    ```
    mvn clean install -PallModules
    ```
-3. To run OpenMeetings:
-   - Navigate to `openmeetings-server/target` directory.
-   - Extract `apache-openmeetings-x.x.x.tar.gz` (or `apache-openmeetings-x.x.x.zip` for Windows).
-   - Enter the `apache-openmeetings-x.x.x` directory and execute the startup script:
+3. 运行OpenMeetings：
+   - 导航到 `openmeetings-server/target` 目录。
+   - 解压 `apache-openmeetings-x.x.x.tar.gz`（Windows系统使用 `apache-openmeetings-x.x.x.zip`）。
+   - 进入 `apache-openmeetings-x.x.x` 目录并执行启动脚本：
      ```
      ./bin/startup.sh
      ```
-     (Use `./bin/startup.bat` for Windows.)
-4. Detailed build documentation: [Build Instructions](https://openmeetings.apache.org/BuildInstructions.html)
+     （Windows系统使用 `./bin/startup.bat`。）
+4. 详细的构建文档：[构建说明](https://openmeetings.apache.org/BuildInstructions.html)
 
-### Builds and CI
-| Description         | Jenkins CI                                                                                                                                                         |
+> **中文备注**：`-PallModules` 参数表示构建所有模块，包括前端和后端组件。构建完成后，可以通过启动脚本来启动服务器。
+
+### 构建和持续集成
+| 描述                | Jenkins CI                                                                                                                                                         |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Master nightly      | [![Build Status](https://ci-builds.apache.org/job/OpenMeetings/job/openmeetings/badge/icon)](https://ci-builds.apache.org/job/OpenMeetings/job/openmeetings/)       |
-| Master Pull Request | [![Build Status](https://ci-builds.apache.org/job/OpenMeetings/job/openmeetings-pr-build/badge/icon)](https://ci-builds.apache.org/job/OpenMeetings/job/openmeetings-pr-build/) |
+| 主分支每晚构建      | [![构建状态](https://ci-builds.apache.org/job/OpenMeetings/job/openmeetings/badge/icon)](https://ci-builds.apache.org/job/OpenMeetings/job/openmeetings/)       |
+| 主分支拉取请求      | [![构建状态](https://ci-builds.apache.org/job/OpenMeetings/job/openmeetings-pr-build/badge/icon)](https://ci-builds.apache.org/job/OpenMeetings/job/openmeetings-pr-build/) |
 
-### Release Notes
-See the [CHANGELOG.md](/CHANGELOG.md) file for a detailed log.
+### 版本说明
+详细日志请参阅 [CHANGELOG.md](/CHANGELOG.md) 文件。
 
-### Recent Releases
+### 最新版本
 
 
 <details>
-	<summary>Release 8.1.0 - Security updates.</summary>
+	<summary>Release 8.1.0 - 安全更新。</summary>
 
 8.1.0
 -----
-[Release 8.1.0](https://www.apache.org/dyn/closer.lua/openmeetings/8.1.0), provides following improvements:
+[Release 8.1.0](https://www.apache.org/dyn/closer.lua/openmeetings/8.1.0) 提供以下改进：
 
-Security:
-* All libraries are updated to most recent versions
+安全:
+* 所有库都已更新到最新版本
 
-WB:
-* Whiteboard video player controls are fixed
+白板:
+* 白板视频播放器控件已修复
 
-Some other fixes and improvements, 9 issues were addressed
+其他修复和改进，共解决了9个问题
 </details>
 <details>
-	<summary>Release 8.0.0 - Security updates, switching to Tomcat 11 and Jakarta stack.</summary>
+	<summary>Release 8.0.0 - 安全更新，迁移到Tomcat 11和Jakarta技术栈。</summary>
 
 8.0.0
 -----
-[Release 8.0.0](https://www.apache.org/dist/openmeetings/8.0.0), provides following improvements:
+[Release 8.0.0](https://www.apache.org/dist/openmeetings/8.0.0) 提供以下改进：
 
-Security:
-* OM is moved to Jakarta stack
-* All libraries are updated to most recent versions
+安全:
+* OM已迁移到Jakarta技术栈
+* 所有库都已更新到最新版本
 
-UI:
-* Fullcalendar v6 is used
+用户界面:
+* 使用Fullcalendar v6
 
-***1 security vulnerability was addressed***
+***解决了1个安全漏洞***
 
-Some other fixes and improvements, 8 issues were addressed
+其他修复和改进，共解决了8个问题
 </details>
 <details>
-	<summary>Release 7.2.0 - Java 17 and KMS 6.18.0+ required. Includes security, UI, and other improvements.</summary>
+	<summary>Release 7.2.0 - 需要Java 17和KMS 6.18.0+。包含安全、UI和其他改进。</summary>
 
 7.2.0
 -----
-[Release 7.2.0](https://www.apache.org/dist/openmeetings/7.2.0), provides following improvements:
+[Release 7.2.0](https://www.apache.org/dist/openmeetings/7.2.0) 提供以下改进：
 
-IMPORTANT: Java 17 and KMS 6.18.0+ are required
+重要提示：需要Java 17和KMS 6.18.0+ 
 
-Security:
-* Login/email are now processed in case insensitive mode
-* Messages and contacts: message folders are not shared between users
-* All dependencies are updated with most recent versions
+安全:
+* 登录/电子邮件现在以不区分大小写的方式处理
+* 消息和联系人：消息文件夹不会在用户之间共享
+* 所有依赖项都已更新到最新版本
 
-UI:
-* Too big profile pictures are now resized
-* Room looks better in RTL mode
-* Email messages looks better
+用户界面:
+* 过大的个人资料图片现在会被调整大小
+* 房间在RTL模式下看起来更好
+* 电子邮件消息看起来更好
 
-Some other fixes and improvements, 10 issues were addressed
+其他修复和改进，共解决了10个问题
 </details>
 <details>
-	<summary>Release 7.1.0 - Various security updates and stability fixes.</summary>
+	<summary>Release 7.1.0 - 各种安全更新和稳定性修复。</summary>
 
 7.1.0
 -----
-[Release 7.1.0](https://archive.apache.org/dist/openmeetings/7.1.0), provides following improvements:
+[Release 7.1.0](https://archive.apache.org/dist/openmeetings/7.1.0) 提供以下改进：
 
-IMPORTANT: Java 17 and KMS 6.18.0+ are required
+重要提示：需要Java 17和KMS 6.18.0+ 
 
-Security:
-* Invitation hash check made strict
-* Set of user permissions is fixed
-* Paths entered in Admin->Config are being verified
-* All dependencies are updated with most recent versions
+安全:
+* 邀请哈希检查更加严格
+* 用户权限集已修复
+* 在Admin->Config中输入的路径正在被验证
+* 所有依赖项都已更新到最新版本
 
-Stability:
-* TURN server config is passed to the client
+稳定性:
+* TURN服务器配置传递给客户端
 
-***3 security vulnerabilities were addressed***
+***解决了3个安全漏洞***
 
-Some other fixes and improvements, 12 issues were addressed
+其他修复和改进，共解决了12个问题
 </details>
 <details>
-	<summary>Older Releases Details:</summary>
+	<summary>旧版本详细信息：</summary>
 
 7.0.0
 -----
-[Release 7.0.0](https://archive.apache.org/dist/openmeetings/7.0.0), provides following improvements:
+[Release 7.0.0](https://archive.apache.org/dist/openmeetings/7.0.0) 提供以下改进：
 
-IMPORTANT: Java 17 is required
+重要提示：需要Java 17
 
-UI and Security:
-* Microphone on/off doesn't interrupt the streaming
-* Stability fix at Safari
-* Full screen mode for WB
-* Redo tool for WB
-* 2-factor authentication
-* Libraries are updated with most recent versions
+用户界面和安全:
+* 麦克风开/关不会中断流媒体
+* Safari浏览器的稳定性修复
+* 白板全屏模式
+* 白板重做工具
+* 双因素认证
+* 库已更新到最新版本
 
-Some other fixes and improvements, 28 issues were addressed
+其他修复和改进，共解决了28个问题
 
 
 6.3.0
 -----
-[Release 6.3.0](https://archive.apache.org/dist/openmeetings/6.3.0), provides following improvements:
+[Release 6.3.0](https://archive.apache.org/dist/openmeetings/6.3.0) 提供以下改进：
 
-Stability and UI:
-* Multiple WB fixes
-* Confirm popups are unified
-* Multiple fixes for latest Safari
-* Libraries are updated with most recent versions
+稳定性和用户界面:
+* 多个白板修复
+* 确认弹窗已统一
+* 最新版Safari浏览器的多个修复
+* 库已更新到最新版本
 
-Some other fixes and improvements, 26 issues were addressed
+其他修复和改进，共解决了26个问题
 
 
 6.2.0
@@ -677,7 +685,9 @@ Other fixes and improvements, 49 issues were fixed
 
 
 
-### License
-Apache OpenMeetings is licensed under the Apache License 2.0. For more details, see [LICENSE](http://www.apache.org/licenses/LICENSE-2.0).
+### 许可证
+Apache OpenMeetings 在 Apache License 2.0 许可下发布。更多详情，请参阅 [LICENSE](http://www.apache.org/licenses/LICENSE-2.0)。
 
-This product also includes third-party software. See more at [NOTICE.md](/NOTICE.md).
+本产品还包含第三方软件。更多信息请查看 [NOTICE.md](/NOTICE.md)。
+
+> **中文备注**：Apache License 2.0 是一个宽松的开源许可证，允许在商业环境中使用、修改和分发软件。
